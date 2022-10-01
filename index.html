@@ -5,8 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Descripción (utilizada por ejemplo en los resultados de Google) -->
+    <meta name="description" content="The MDN Web Docs site provides information about Open Web technologies including HTML, CSS, and APIs
+    for both Web sites and progressive web apps." >
+    <!-- Hoja de estilos CSS utilizada -->
+    <link rel="stylesheet" href="header.css" >
+    <link rel="stylesheet" href="banner.css" >
+</head>
 </head>
 <body>
-   <h1>Esto es una prueba para ver si funciona correctamente</h1> 
+    <!-- header: contiene el encabezado donde puede ir elementos como el logo, el nombre del sitio y 
+        elementos apropiados para el encabezado. -->
+   <header>
+    <!-- div: se emplea para definir un bloque de contenido o sección de la página -->
+    <div class = "container">
+        <div class = "logo">
+            <img src = "img/imgJines.png" alt = "imgJines">
+        </div>
+        <!-- nav: proporcionar enlaces de navegación, ya sea dentro del documento actual o de otros documentos -->
+        <nav class = "menu">
+            <!-- ul: Lista desordenada: especifican los ítems de la lista -->
+            <ul>
+                <!-- li: item list && a: anchor, enlace a otras páginas web && href: Referencia de Hipertexto (ubicación del archivo) -->
+                <li><a href="inicio.html">INICIO</a></li>
+                <li><a href="carta.html">CARTA</a></li>
+                <li><a href="reserva.html">RESERVA</a></li>
+            </ul>
+        </nav>
+    </div>
+   </header>
+   <!-- main: representa el contenido principal del <body> de un documento o aplicación -->
+    <main>
+        <div id= "slider">
+            <ul  id="slideWrap"> 
+                <li><img src="img/imgRes1.jpg" alt=""></li>
+                <li><img src="img/imgRes2.jpg" alt=""></li>
+                <li><img src="img/imgRes3.jpg" alt=""></li>
+                <li><img src="img/imgRes4.jpg" alt=""></li>
+            </ul>
+            <a id="prev" href="#">&#8810;</a>
+            <a id="next" href="#">&#8811;</a>
+        </div>
+        <script>
+            var responsiveSlider = function() {
+                var slider = document.getElementById("slider");
+                var sliderWidth = slider.offsetWidth;
+                var slideList = document.getElementById("slideWrap");
+                var count = 1;
+                var items = slideList.querySelectorAll("li").length;
+                var prev = document.getElementById("prev");
+                var next = document.getElementById("next");
+                
+                window.addEventListener('resize', function() {
+                    sliderWidth = slider.offsetWidth;
+                });
+                
+                var prevSlide = function() {
+                    if(count > 1) {
+                        count = count - 2;
+                        slideList.style.left = "-" + count * sliderWidth + "px";
+                        count++;
+                    }else if(count = 1) {
+                        count = items - 1;
+                        slideList.style.left = "-" + count * sliderWidth + "px";
+                        count++;
+                    }
+                };
+                
+                var nextSlide = function() {
+                    if(count < items) {
+                        slideList.style.left = "-" + count * sliderWidth + "px";
+                        count++;
+                    }else if(count = items) {
+                        slideList.style.left = "0px";
+                        count = 1;
+                    }
+                };
+                
+                next.addEventListener("click", function() {
+                    nextSlide();
+                });
+                
+                prev.addEventListener("click", function() {
+                    prevSlide();
+                });
+                
+                setInterval(function() {
+                    nextSlide()
+                }, 8000);
+            };
+
+            window.onload = function() {
+                responsiveSlider();  
+            }
+
+        </script>  
+    </main>
 </body>
 </html>

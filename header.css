@@ -1,0 +1,58 @@
+/* Ventana (Eliminar las configuraciones por defecto) */
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none; /* Eliminar las decoraciones (subrayados) */
+    list-style: none;/* Eliminar los puntos de as listas */
+    box-sizing: border-box; /* Los elementos no se salgan del contenedor */
+}
+
+/* header: se aplica un estilo a todo el encabezado*/
+header{
+    width: auto; /* El ancho del header se estable dependiendo del ancho de cada pantalla */ 
+    height: 105px; /* El alto del header se mide en px */
+    background-color:#e7e7e727; /* Establece el color de fondo del header */
+}
+
+/*  */
+.container{
+    margin:0px auto;
+}
+
+
+.logo{
+    float: left;
+    margin-left: 2%;
+    margin-top: 0.5%;
+}
+
+/* logo img: se esplica un estilo a la imagen dentro del div logo */
+.logo img{
+    width:210px;
+    height: 90px;
+}
+
+/* menu: se aplica un estilo al menu de opciones*/
+.menu{
+    float: right; /* Elemento orientados en la derecha de la páigina */
+    margin-top: 3%;
+    margin-right: 7%;
+    
+}
+
+.menu ul{
+    list-style: none;
+}
+
+.menu ul li{
+    display: inline-block; /* campos en una misma linea */
+}
+
+.menu ul li a{
+    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000;
+    padding-left: 30px;  /* Espacios entre campos */
+    font-weight: bold;
+    font-size: 17px;
+}
