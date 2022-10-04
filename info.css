@@ -1,0 +1,115 @@
+/* UBICACIÓN */
+.location{
+    margin: 5%;
+    background-color: rgba(207, 182, 169, 0.315);
+}
+
+.location h1, h2, h3{
+    font-weight: 5;
+    text-align: center;
+    font-size:xx-large;
+    font-family: cursive;
+}
+
+.play{
+    float: left;
+    background-color: rgba(207, 182, 169, 0.186);
+}
+
+.play p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:medium;
+    font-weight: 1;
+    margin-top: 2%;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+.view {
+    float: right;
+}
+
+.location .view ul li img{
+    margin-top: 2.5%;
+    width: 400px;
+    padding-top: 3%;
+}
+
+/* CHEFS */
+
+h2{
+    text-align:center;
+    margin-top: 50%;
+    background-color:  rgba(108, 133, 116, 0.346);
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.chef1, .chef2, .chef3{
+    margin-left: 5%;
+    width: 26.68%;
+    float: left;
+    display: grid;
+    place-items: center;
+    background-color: rgba(209, 226, 214, 0.583);
+}
+
+.chef1 #Masi, .chef2 #Giada, .chef3 #Carlo{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:x-large;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: justify;
+    line-height: 1.7;
+} 
+
+
+.chef1 #p1, .chef2 #p2, .chef3 #p3{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:medium;
+    font-weight: 1;
+    margin-top: 2%;
+    text-align: justify;
+    line-height: 1.7;
+    padding: 4%;
+} 
+
+.chef1 img, .chef2 img, .chef3 img{
+    object-fit: cover;
+    width: 370px;
+    height: 520px;
+}
+
+/* EXPOS */
+
+h3{
+    text-align:center;
+    margin-top: 50%;
+    background-color:  rgba(255, 230, 0, 0.346);
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.expo{
+    margin-top: 65%;
+}
+
+.chefExpo{
+    float: left;
+    width: 50%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.expo img{
+    width: 700px;
+    padding: none;
+}
+
+
+
+
+
+
+

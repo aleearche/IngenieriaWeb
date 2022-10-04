@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,40 @@
     <title>Document</title>
     <!-- Descripción (utilizada por ejemplo en los resultados de Google) -->
     <meta name="description" content="The MDN Web Docs site provides information about Open Web technologies including HTML, CSS, and APIs
-    for both Web sites and progressive web apps." >
+    for both Web sites and progressive web apps.">
     <!-- Hoja de estilos CSS utilizada -->
-    <link rel="stylesheet" href="header.css" >
-    <link rel="stylesheet" href="banner.css" >
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="banner.css">
+    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="calendar.css">
 </head>
 </head>
+
 <body>
     <!-- header: contiene el encabezado donde puede ir elementos como el logo, el nombre del sitio y 
         elementos apropiados para el encabezado. -->
-   <header>
-    <!-- div: se emplea para definir un bloque de contenido o sección de la página -->
-    <div class = "container">
-        <div class = "logo">
-            <img src = "img/imgJines.png" alt = "imgJines">
+    <header>
+        <!-- div: se emplea para definir un bloque de contenido o sección de la página -->
+        <div class="container">
+            <div class="logo">
+                <img src="img/imgJines.png" alt="imgJines">
+            </div>
+            <!-- nav: proporcionar enlaces de navegación, ya sea dentro del documento actual o de otros documentos -->
+            <nav class="menu">
+                <!-- ul: Lista desordenada: especifican los ítems de la lista -->
+                <ul>
+                    <!-- li: item list && a: anchor, enlace a otras páginas web && href: Referencia de Hipertexto (ubicación del archivo) -->
+                    <li><a href="inicio.html">INICIO</a></li>
+                    <li><a href="carta.html">CARTA</a></li>
+                    <li><a href="reserva.html">RESERVA</a></li>
+                </ul>
+            </nav>
         </div>
-        <!-- nav: proporcionar enlaces de navegación, ya sea dentro del documento actual o de otros documentos -->
-        <nav class = "menu">
-            <!-- ul: Lista desordenada: especifican los ítems de la lista -->
-            <ul>
-                <!-- li: item list && a: anchor, enlace a otras páginas web && href: Referencia de Hipertexto (ubicación del archivo) -->
-                <li><a href="inicio.html">INICIO</a></li>
-                <li><a href="carta.html">CARTA</a></li>
-                <li><a href="reserva.html">RESERVA</a></li>
-            </ul>
-        </nav>
-    </div>
-   </header>
-   <!-- main: representa el contenido principal del <body> de un documento o aplicación -->
+    </header>
+    <!-- main: representa el contenido principal del <body> de un documento o aplicación -->
     <main>
-        <div id= "slider">
-            <ul  id="slideWrap"> 
+        <div id="slider">
+            <ul id="slideWrap">
                 <li><img src="img/imgRes1.jpg" alt=""></li>
                 <li><img src="img/imgRes2.jpg" alt=""></li>
                 <li><img src="img/imgRes3.jpg" alt=""></li>
@@ -47,7 +51,7 @@
             <a id="next" href="#">&#8811;</a>
         </div>
         <script>
-            var responsiveSlider = function() {
+            var responsiveSlider = function () {
                 var slider = document.getElementById("slider");
                 var sliderWidth = slider.offsetWidth;
                 var slideList = document.getElementById("slideWrap");
@@ -55,51 +59,175 @@
                 var items = slideList.querySelectorAll("li").length;
                 var prev = document.getElementById("prev");
                 var next = document.getElementById("next");
-                
-                window.addEventListener('resize', function() {
+
+                window.addEventListener('resize', function () {
                     sliderWidth = slider.offsetWidth;
                 });
-                
-                var prevSlide = function() {
-                    if(count > 1) {
+
+                var prevSlide = function () {
+                    if (count > 1) {
                         count = count - 2;
                         slideList.style.left = "-" + count * sliderWidth + "px";
                         count++;
-                    }else if(count = 1) {
+                    } else if (count = 1) {
                         count = items - 1;
                         slideList.style.left = "-" + count * sliderWidth + "px";
                         count++;
                     }
                 };
-                
-                var nextSlide = function() {
-                    if(count < items) {
+
+                var nextSlide = function () {
+                    if (count < items) {
                         slideList.style.left = "-" + count * sliderWidth + "px";
                         count++;
-                    }else if(count = items) {
+                    } else if (count = items) {
                         slideList.style.left = "0px";
                         count = 1;
                     }
                 };
-                
-                next.addEventListener("click", function() {
+
+                next.addEventListener("click", function () {
                     nextSlide();
                 });
-                
-                prev.addEventListener("click", function() {
+
+                prev.addEventListener("click", function () {
                     prevSlide();
                 });
-                
-                setInterval(function() {
+
+                setInterval(function () {
                     nextSlide()
                 }, 8000);
             };
 
-            window.onload = function() {
-                responsiveSlider();  
+            window.onload = function () {
+                responsiveSlider();
             }
 
-        </script>  
+        </script>
+        <div class="location">
+            <h1>UBICACIÓN</h1>
+            <div class="play">
+                <p>La irreverente Madrid también sabe cómo vestirse de gala para disfrutar de noches inolvidables.
+                    Siéntate a la mesa de la elegancia, la sofisticación y la distinción en una de las ciudades europeas
+                    con más alma del globo. Descubre el paraíso gastro que la capital tiene que ofrecerte de la mano de
+                    uno de los <strong>
+                    restaurantes más lujosos </strong> de Madrid. Hay recuerdos que permanecen en nuestra retina;
+                    otros, por el contrario,
+                    mucho más exquisitos, en nuestro paladar. <strong>Jines</strong> te invita a disfrutar de una
+                    <strong> cena innolvidable en pleno centro de
+                        la ciudad,</strong> en la que a través del saber hacer y la maestría de nuestros Chefs vivirás
+                    <strong>una experiencia culinaría excepcional.</strong></p>
+                <video width="870" height="500" controls autoplay>
+                    <source src="video/X2Download.app-Putuo Taopu Forest Park in Shanghai.mp4" type="video/mp4">
+                    <!-- <source src="movie.ogg" type="video/ogg"> -->
+                    Your browser does not support the video tag.
+                </video>
+                <div class="view">
+                    <ul>
+                        <li><img src="img/imgExt3.jpg" alt=""></li>
+                        <li><img src="img/imgExt4.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h2>CHEF'S</h2>
+        <div class="contChef">
+            <div class="chef1">
+                <img src="img/chefMassi.jpeg" alt="image" srcet="">
+                <a href="https://www.google.com/search?q=Massimiliano+Alajmo&bih=777&biw=1512&hl=es&ei=_Lk5Y--SOIKIur4P9OesyAc&ved=0ahUKEwjvgM6x-cH6AhUChM4BHfQzC3kQ4dUDCA4&uact=5&oq=Massimiliano+Alajmo&gs_lcp=Cgdnd3Mtd2l6EAMyCggAEEcQ1gQQsAMyCggAEEcQ1gQQsAMyBwgAELADEEMyBwgAELADEEMyDAguEMgDELADEEMYATIMCC4QyAMQsAMQQxgBMgwILhDIAxCwAxBDGAEyDAguEMgDELADEEMYATIMCC4QyAMQsAMQQxgBMhIILhDHARCvARDIAxCwAxBDGAFKBAhBGABKBAhGGABQAFgAYNEDaAFwAXgAgAEAiAEAkgEAmAEAyAEKwAEB2gEECAEYCA&sclient=gws-wiz" id="Masi">Massimiliano Alajmo</a>
+                <p class="imag.box" id="p1">Nacido en Padua en 1974, Massimiliano (Max) Alajmo con 5 estrellas Michelín a su nombre, representa 
+                    la tercera generación de una familia de restauradores, que lleva en el ADN la pasión por la  hospitalidad, la materia prima y la cocina. 
+                    Después de graduarse en una escuela de gestión en restauración en Italia, Max prosigue con su arte culinario en nuestro restaurante. Creando así, un
+                     menú especifico para nuestros invitados que consta de diez platos, entre ellos, tres entrantes, dos primeros, dos segundos y tres postres.
+                    </p>
+            </div>
+            <div class="chef2">
+                <img src="img/chefGiada.jpeg" alt="image" srcet="">
+                <a href="https://www.google.com/search?q=giada+de+laurentiis+chef&source=lmns&bih=834&biw=1512&hl=es&sa=X&ved=2ahUKEwia1vOWxMH6AhWVQEEAHRE5DhgQ_AUoAHoECAEQAA" id="Giada">Giada De Laurentiis</a>
+                <p class="imag.box" id="p2">Fruto de años de trabajo y formación académica en la prestigiosa escuela Le Cordon Bleu de París, Giada 
+                    es una de las chefs más reconocidas y admiradas del planeta. Giada Pamela de Benedetti De Laurentiis, nació en Roma, el 22 de agosto de 1970, y tras 
+                    su largo recorrido en esta industria ha decidido deleitarnos con su magnifica elaboración de pastas que ha creado únicamente para Jines. Desde platos más innovadores como el
+                    "Spaghetti en gelatina" hasta un plato más tradicional como su famosa "Carbonara".</p>
+            </div>
+            <div class="chef3">
+                <img src="img/chefCarlo.jpeg" alt="image" srcet="">
+                <a href="https://www.google.com/search?q=Carlo+Cracco&ei=Rbw5Y_P2G-zf7_UPvfSs-AE&ved=0ahUKEwizravI-8H6AhXs77sIHT06Cx8Q4dUDCA4&uact=5&oq=Carlo+Cracco&gs_lcp=Cgdnd3Mtd2l6EAMyBAguEEMyBQgAEIAEMgsILhCABBDHARCvATIFCAAQgAQyCAgAEIAEEMkDMgYIABAeEBYyBggAEB4QFjIGCAAQHhAWMgYIABAeEBYyBggAEB4QFjoHCAAQsAMQQzoJCAAQHhCwAxAHOgwILhDIAxCwAxBDGAE6DwguENQCEMgDELADEEMYAUoECEEYAUoECEYYAFCdDlidDmCOE2gCcAB4AIABc4gBc5IBAzAuMZgBAKABAaABArABAMgBC8ABAdoBBAgBGAg&sclient=gws-wiz" id="Carlo">Carlo Cracco</a>
+                <p class="imag.box" id="p3">Cracco, originario de Vincenza, es, como todos los chefs, un trotamundos, ya que se 
+                    sabe que la experiencia, la observación y el conocimiento juegan un papel importante en la creación de una gran cocina.
+                    En 1986 comenzó su andadura profesional en el restaurante de Gualtiero Marchesi en Milán, el primer restaurante italiano 
+                    que ganó tres estrellas Michelin. Desde entonces, ha llevado su inspiración culinaria a numerosas ciudades: Savona, París, 
+                    Florencia, Brescia y actualmente en España, donde nos ofrece verdaeros manjares.</p>
+            </div>
+        </div>
+        <div class="expo">
+            <h3>EXPOSICIONES</h3>
+            <div class="chefExpo">
+                <img src="img/expoChef.jpg" alt="imag" srcet="">
+            </div>
+            <div class="prueba"> 
+            <section class="card__header">
+                <h4>Thursday 7th</h4>
+                <h5>January 2020</h5>
+            </section>
+            <section class="card__body">
+                <ul class="card__body--days">
+                  <li>mon</li>
+                  <li>tue</li>
+                  <li>wed</li>
+                  <li>thu</li>
+                  <li>fri</li>
+                  <li>sat</li>
+                  <li>sun</li>
+                </ul>
+                <ul class="card__body--dates">
+                  <li class="previo">30</li>
+                  <li class="previo">31</li>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li class="active">7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+                  <li>11</li>
+                  <li>12</li>
+                  <li>13</li>
+                  <li>14</li>
+                  <li>15</li>
+                  <li class="circle_orange">16 <span>5</span></li>
+                  <li>17</li>
+                  <li>18</li>
+                  <li class="circle_purple">19 <span>6</span></li>
+                  <li>20</li>
+                  <li>21</li>
+                  <li>22</li>
+                  <li>23</li>
+                  <li>24</li>
+                  <li>25</li>
+                  <li>26</li>
+                  <li>27</li>
+                  <li>28</li>
+                  <li>29</li>
+                  <li>30</li>
+                  <li>31</li>
+                  <li class="next">1</li>
+                  <li class="next">2</li>
+                </ul>
+              </section>
+              <div class="card__footer">
+                <p>11:35 am</p>
+                <a href="#" class="add">+</a>
+                <p>12<sup>o</sup> C</p>
+              </div>
+            <div class="public">
+                <img src="img/ccMaster.jpeg" alt="">
+            </div>
+            </div>
+        </div>
+        <h5>PREMIOS</h5>
     </main>
 </body>
 </html>

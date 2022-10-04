@@ -5,6 +5,7 @@
     text-decoration: none; /* Eliminar las decoraciones (subrayados) */
     list-style: none;/* Eliminar los puntos de as listas */
     box-sizing: border-box; /* Los elementos no se salgan del contenedor */
+    color: black;
 }
 
 /* header: se aplica un estilo a todo el encabezado*/
@@ -18,7 +19,6 @@ header{
 .container{
     margin:0px auto;
 }
-
 
 .logo{
     float: left;
